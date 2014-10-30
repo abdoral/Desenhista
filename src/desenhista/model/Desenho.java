@@ -12,7 +12,6 @@ import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
 import java.io.Serializable;
 import java.util.ArrayList;
-import javafx.geometry.Point2D;
 
 /**
  *
@@ -40,13 +39,13 @@ public class Desenho implements Serializable {
     public void setFigura(double altura, double largura, Ponto posicao) {
         listFigs.add(new Retangulo(altura, largura, posicao));
     }
-
+    
     public void salvarDesenho(String filename) {
 
         FileOutputStream fos = null;
         ObjectOutputStream out = null;
         try {
-            fos = new FileOutputStream(filename);
+            fos = new FileOutputStream(filename+".des");
             out = new ObjectOutputStream(fos);
             out.writeObject(listFigs);
             out.close();

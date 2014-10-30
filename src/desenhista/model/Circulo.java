@@ -14,9 +14,11 @@ public class Circulo implements Figuras {
 
     private double raio;
     private Ponto posicao;
+    private String nome;
 
-    public Circulo(double raio, double x, double y) {
+    public Circulo(String nome, double raio, double x, double y) {
         posicao = new Ponto(x, y);
+        this.nome = nome;
         this.raio = raio;
     }
     
@@ -32,6 +34,16 @@ public class Circulo implements Figuras {
     
     public double getRaio() {
         return raio;
+    }
+
+    @Override
+    public void setPosicao(Ponto posicao) {
+        this.posicao = posicao;
+    }
+
+    @Override
+    public String getNome() {
+        return nome;
     }
 
 }

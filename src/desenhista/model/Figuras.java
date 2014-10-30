@@ -15,4 +15,8 @@ public interface Figuras extends Serializable {
     
     public abstract Ponto getPosicao();
     
+    public abstract void setPosicao(Ponto posicao);
+    
+    public abstract String getNome();
+    
 }
