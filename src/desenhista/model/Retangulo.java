@@ -5,7 +5,6 @@
  */
 package desenhista.model;
 
-import javafx.geometry.Point2D;
 
 /**
  *
@@ -14,22 +13,22 @@ import javafx.geometry.Point2D;
 public class Retangulo implements Figuras {
 
     private double altura, largura;
-    private Point2D posicao;
+    private Ponto posicao;
 
     public Retangulo(int x, int y, double altura, double largura) {
-        posicao = new Point2D(x, y);
+        posicao = new Ponto(x, y);
         this.altura = altura;
         this.largura = largura;
     }
     
-    public Retangulo(double altura, double largura, Point2D posicao) {
+    public Retangulo(double altura, double largura, Ponto posicao) {
         this.posicao = posicao;
         this.altura = altura;
         this.largura = largura;
     }
 
     @Override
-    public Point2D getPosicao() {
+    public Ponto getPosicao() {
         return posicao;
     }
 

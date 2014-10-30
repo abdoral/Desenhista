@@ -6,7 +6,6 @@
 package desenhista.model;
 
 import java.io.Serializable;
-import javafx.geometry.Point2D;
 
 /**
  *
@@ -14,6 +13,6 @@ import javafx.geometry.Point2D;
  */
 public interface Figuras extends Serializable {
     
-    public abstract Point2D getPosicao();
+    public abstract Ponto getPosicao();
     
 }

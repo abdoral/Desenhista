@@ -5,8 +5,10 @@
  */
 package desenhista;
 
+import desenhista.model.Circulo;
 import desenhista.model.Desenho;
 import desenhista.model.Figuras;
+import desenhista.model.Ponto;
 import java.net.URL;
 import java.util.ArrayList;
 import java.util.ResourceBundle;
@@ -63,6 +65,8 @@ public class QuadroController implements Initializable {
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         // TODO
+        
+        //projetos.set
 
     }
 
@@ -74,7 +78,7 @@ public class QuadroController implements Initializable {
 
     @FXML
     public void add() {
-        desenho.setFigura(Double.parseDouble(raio.getText()), new Point2D(Double.parseDouble(coordenada_x.getText()), Double.parseDouble(coordenada_y.getText())));
+        desenho.setFigura(Double.parseDouble(raio.getText()), new Ponto(Double.parseDouble(coordenada_x.getText()), Double.parseDouble(coordenada_y.getText())));
         raio.setText(null);
         coordenada_x.setText(null);
         coordenada_y.setText(null);
@@ -87,8 +91,10 @@ public class QuadroController implements Initializable {
         ArrayList<Figuras> figs = Desenho.abrirDesenho("Projeto1");
         System.out.println("Total de figuras:" + figs.size());
         for (int i = 0; i < figs.size(); i++) {
+            //System.out.println(figs.get(i));
             System.out.println("Posição X:" + figs.get(i).getPosicao().getX());
-            //System.out.println("Posição Y:" + figs.get(i).getPosicao().getY());
+            System.out.println("Posição Y:" + figs.get(i).getPosicao().getY());
+            System.out.println("Raio:" + ((Circulo)figs.get(i)).getRaio());
             System.out.println("-------------------------------------------------");
         }
 

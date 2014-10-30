@@ -33,11 +33,11 @@ public class Desenho implements Serializable {
     }
 
     /*Adiciona as informações da figura criada a uma lista*/
-    public void setFigura(double raio, Point2D posicao) {
+    public void setFigura(double raio, Ponto posicao) {
         listFigs.add(new Circulo(raio, posicao));
     }
 
-    public void setFigura(double altura, double largura, Point2D posicao) {
+    public void setFigura(double altura, double largura, Ponto posicao) {
         listFigs.add(new Retangulo(altura, largura, posicao));
     }
 

@@ -5,7 +5,6 @@
  */
 package desenhista.model;
 
-import javafx.geometry.Point2D;
 
 /**
  *
@@ -14,21 +13,25 @@ import javafx.geometry.Point2D;
 public class Circulo implements Figuras {
 
     private double raio;
-    private Point2D posicao;
+    private Ponto posicao;
 
     public Circulo(double raio, double x, double y) {
-        posicao = new Point2D(x, y);
+        posicao = new Ponto(x, y);
         this.raio = raio;
     }
     
-    public Circulo(double raio, Point2D posicao) {
-        posicao = posicao;
+    public Circulo(double raio, Ponto posicao) {
+        this.posicao = posicao;
         this.raio = raio;
     }
 
     @Override
-    public Point2D getPosicao() {
+    public Ponto getPosicao() {
         return posicao;
+    }
+    
+    public double getRaio() {
+        return raio;
     }
 
 }
