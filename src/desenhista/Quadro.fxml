@@ -1,10 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.*?>
 <?import java.lang.*?>
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-<AnchorPane id="AnchorPane" prefHeight="444.0" prefWidth="755.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="desenhista.QuadroController">
+<AnchorPane id="AnchorPane" prefHeight="444.0" prefWidth="978.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="desenhista.QuadroController">
    <children>
       <SplitPane layoutX="55.0" layoutY="88.0" prefHeight="444.0" prefWidth="755.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
         <items>
@@ -12,25 +13,31 @@
                <children>
                   <SplitPane dividerPositions="0.17727272727272728" layoutX="175.0" layoutY="52.0" orientation="VERTICAL" prefHeight="442.0" prefWidth="596.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
                     <items>
-                      <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="154.0" prefWidth="594.0" SplitPane.resizableWithParent="false">
+                      <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="178.0" prefWidth="974.0">
                            <children>
-                              <TextField fx:id="coordenada_x" layoutX="8.0" layoutY="11.0" prefHeight="26.0" prefWidth="83.0" promptText="Ponto X" />
-                              <TextField fx:id="coordenada_y" layoutX="102.0" layoutY="11.0" prefHeight="26.0" prefWidth="89.0" promptText="Ponto Y" />
-                              <TextField fx:id="raio" layoutX="203.0" layoutY="11.0" prefHeight="26.0" prefWidth="89.0" promptText="Raio" />
-                              <TextField fx:id="altura" layoutX="305.0" layoutY="11.0" prefHeight="26.0" prefWidth="89.0" promptText="Altura" />
-                              <TextField fx:id="largura" layoutX="402.0" layoutY="11.0" prefHeight="26.0" prefWidth="89.0" promptText="Largura" />
-                              <Button fx:id="add" layoutX="502.0" layoutY="12.0" mnemonicParsing="false" onAction="#add" text="Add" />
-                              <Button fx:id="remover" layoutX="551.0" layoutY="12.0" mnemonicParsing="false" onAction="#remover" text="Remover" />
-                              <Button fx:id="salvar" layoutX="632.0" layoutY="12.0" mnemonicParsing="false" onAction="#salvar" text="Salvar" />
-                              <Button fx:id="novo" layoutX="692.0" layoutY="12.0" mnemonicParsing="false" onAction="#novo" text="Novo" />
-                              <Button fx:id="arquivo" layoutX="501.0" layoutY="42.0" mnemonicParsing="false" onAction="#abrirArquivo" prefHeight="25.0" prefWidth="95.0" text="Arquivo" />
+                              <TextField fx:id="coordenada_x" layoutX="331.0" layoutY="11.0" prefHeight="26.0" prefWidth="35.0" promptText="X" />
+                              <TextField fx:id="coordenada_y" layoutX="375.0" layoutY="11.0" prefHeight="26.0" prefWidth="35.0" promptText="Y" />
+                              <TextField fx:id="raio" layoutX="423.0" layoutY="11.0" prefHeight="26.0" prefWidth="50.0" promptText="Raio" />
+                              <TextField fx:id="altura" layoutX="479.0" layoutY="11.0" prefHeight="26.0" prefWidth="55.0" promptText="Altura" />
+                              <TextField fx:id="largura" layoutX="541.0" layoutY="11.0" prefHeight="26.0" prefWidth="61.0" promptText="Largura" />
+                              <Button fx:id="add" layoutX="615.0" layoutY="11.0" mnemonicParsing="false" onAction="#add" text="Add" />
+                              <Button fx:id="remover" layoutX="664.0" layoutY="11.0" mnemonicParsing="false" onAction="#remover" text="Remover" />
+                              <Button fx:id="salvar" layoutX="745.0" layoutY="11.0" mnemonicParsing="false" onAction="#salvar" text="Salvar" />
+                              <Button fx:id="novo" layoutX="805.0" layoutY="11.0" mnemonicParsing="false" onAction="#novo" text="Novo" />
+                              <Button fx:id="arquivo" layoutX="865.0" layoutY="11.0" mnemonicParsing="false" onAction="#abrirArquivo" prefHeight="25.0" prefWidth="95.0" text="Arquivo" />
+                              <ComboBox fx:id="figura" layoutX="14.0" layoutY="14.0" onAction="#selecionaFigura" prefWidth="150.0" promptText="Figura">
+                                 <cursor>
+                                    <Cursor fx:constant="DEFAULT" />
+                                 </cursor>
+                              </ComboBox>
+                              <ColorPicker fx:id="cor" layoutX="177.0" layoutY="14.0" prefHeight="26.0" prefWidth="124.0" />
                            </children>
                         </AnchorPane>
                       <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="275.0" prefWidth="594.0">
                            <children>
                               <SplitPane layoutX="110.0" layoutY="158.0" orientation="VERTICAL" prefHeight="358.0" prefWidth="594.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
                                 <items>
-                                  <AnchorPane fx:id="tela" minHeight="0.0" minWidth="0.0" onMouseClicked="#criaFigura" onMouseEntered="#desabilaParams" onMouseExited="#habilitaParams" prefHeight="100.0" prefWidth="160.0" />
+                                  <AnchorPane fx:id="tela" minHeight="0.0" minWidth="0.0" onMouseClicked="#criaFigura" onMouseEntered="#desabilaParams" onMouseExited="#habilitaParams" prefHeight="316.0" prefWidth="972.0" />
                                 </items>
                               </SplitPane>
                            </children>

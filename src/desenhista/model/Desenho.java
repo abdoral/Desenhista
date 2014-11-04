@@ -27,17 +27,30 @@ public class Desenho implements Serializable {
         this.nome = nome;
     }
     
+    public Desenho() {
+        listFigs = new ArrayList<>();
+    }
+    
     public String getNome() {
         return nome;
     }
 
     /*Adiciona as informações da figura criada a uma lista*/
-    public void setFigura(double raio, Ponto posicao) {
-        listFigs.add(new Circulo(raio, posicao));
+    public void setFigura(double raio, Ponto posicao, String cor) {
+        listFigs.add(new Circulo(nome, raio, posicao, cor));
     }
 
-    public void setFigura(double altura, double largura, Ponto posicao) {
-        listFigs.add(new Retangulo(altura, largura, posicao));
+    public void setFigura(double altura, double largura, Ponto posicao, String cor) {
+        listFigs.add(new Retangulo(altura, largura, posicao, cor));
+    }
+    
+    public void setFigura(Ponto inicio, Ponto fim) {
+        listFigs.add(new Linha(inicio, fim));
+    }
+    
+    public void atualizaPosicao(int index, Ponto posicao) {
+        listFigs.get(index).setPosicao(posicao);
+        System.out.println("Atualizei!");
     }
     
     public void salvarDesenho(String filename) {
@@ -74,6 +87,10 @@ public class Desenho implements Serializable {
         }
         return figs;
 
+    }
+    
+    public void remover(int i) {
+        listFigs.remove(i);
     }
 
 }

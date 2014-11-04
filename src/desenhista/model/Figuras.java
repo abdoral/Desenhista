@@ -19,4 +19,6 @@ public interface Figuras extends Serializable {
     
     public abstract String getNome();
     
+    public abstract String getColor();
+    
 }
