@@ -120,7 +120,7 @@ public class QuadroController implements Initializable {
         novo.setDisable(true);
         figura.setDisable(false);
         carregaComboBoxFigura();
-        limparTela();
+        limparTela(count);
     }
 
     @FXML
@@ -136,10 +136,15 @@ public class QuadroController implements Initializable {
     public void remover() {
         //System.out.println("Eu fui acionado");
         try {
+//            if(count == 0) {
+//                mensagemErro("Erro", "Sem figuras para serem removidas.", "Adicione novas figuras.");
+//                return;
+//            }
             tela.getChildren().remove(shape.get(count - 1));
             desenho.remover(count-1);
             shape.remove(count-1);
             count--;
+            salvar.setDisable(false);
         } catch (Exception e) {
             mensagemErro("Erro", "Sem figuras para serem removidas.", "Adicione novas figuras.");
         }
@@ -438,8 +443,8 @@ public class QuadroController implements Initializable {
 
     private void carregaCenario(String filename) {
         
-//        if(count > 0)
-//           limparTela();
+        if(count > 0)
+           limparTela(count);
         //count = 0;
         ArrayList<Figuras> figs = Desenho.abrirDesenho(filename);
 
@@ -541,10 +546,13 @@ public class QuadroController implements Initializable {
         }
     }
 
-    private void limparTela() {
-        for (int i = 0; i <= count; i++) {
-            remover();
+    private void limparTela(int total) {
+        for (int i = 0; i <= total; i++) {
+            tela.getChildren().remove(shape.get(i));
+            desenho.remover(i);
+            shape.remove(i);
         }
+        count = 0;
     }
 
     private void mensagemErro(String titulo, String tipo_erro, String solucao) {
